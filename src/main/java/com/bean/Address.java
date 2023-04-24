@@ -13,29 +13,30 @@ public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer aid;
 	private String citynama;
 	private String distname;
 	private String state;
 	private String pincode;
 	
-	@OneToOne(mappedBy = "address")
-	PersonDetails personDetails;
+//	@OneToOne(mappedBy = "address")
+//	PersonDetails personDetails;
 	
-	public PersonDetails getPersonDetails() {
-		return personDetails;
-	}
-	public void setPersonDetails(PersonDetails personDetails) {
-		this.personDetails = personDetails;
-	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+//	public PersonDetails getPersonDetails() {
+//		return personDetails;
+//	}
+//	public void setPersonDetails(PersonDetails personDetails) {
+//		this.personDetails = personDetails;
+//	}
+	
 	public String getCitynama() {
 		return citynama;
+	}
+	public Integer getAid() {
+		return aid;
+	}
+	public void setAid(Integer aid) {
+		this.aid = aid;
 	}
 	public void setCitynama(String citynama) {
 		this.citynama = citynama;

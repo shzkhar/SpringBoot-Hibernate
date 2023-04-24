@@ -1,5 +1,7 @@
 package com.bean;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,13 +24,14 @@ public class Employee {
 	
 	@ManyToOne
 	@JoinColumn(name = "deptid",referencedColumnName = "deptid")
-	Department deparment;
+	Department department;
+
 	
-	public Department getDeparment() {
-		return deparment;
+	public Department getDepartment() {
+		return department;
 	}
-	public void setDeparment(Department deparment) {
-		this.deparment = deparment;
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 	public Integer getId() {
 		return id;

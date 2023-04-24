@@ -18,52 +18,52 @@ import com.repository.AddressRepo;
 @RestController
 public class AddressController {
 
-	@Autowired
-	AddressRepo addressrepo;
-	
-	@PostMapping("/addAddressData")
-	public Address addData(@RequestBody Address address)
-	{
-		addressrepo.save(address);
-		return address; 
-	}
-	
-	@GetMapping("/getAddressDataById/{id}")
-	public Address getDataById(@PathVariable("id") Integer id)
-	{
-		Optional<Address> opt = addressrepo.findById(id);
-		
-		
-		if(opt.isEmpty())
-		{
-			return null;
-		}
-		else
-		{
-			return opt.get();
-		}
-	}
-	
-	    @GetMapping("/getAllAddress")
-	    public List<Address> getAllProduct(){
-	    	return addressrepo.findAll();
-	    } 
-	    
-	 
-	    
-	    @DeleteMapping("/deleteAddressById/{id}")
-	    public Address deleteProductById(@PathVariable("id") Integer id)
-	    {
-	    	Address address = addressrepo.findById(id).get();
-	    	addressrepo.deleteById(id);
-	    	return address;
-	    } 
-	    
-	    @PutMapping("/updateAddress")
-	    public Address updateData(@RequestBody Address address)
-	    {
-	    	addressrepo.save(address);
-	    	return address;
-	    }
+//	@Autowired
+//	AddressRepo addressrepo;
+//	
+//	@PostMapping("/addAddressData")
+//	public Address addData(@RequestBody Address address)
+//	{
+//		addressrepo.save(address);
+//		return address; 
+//	}
+//	
+//	@GetMapping("/getAddressDataById/{id}")
+//	public Address getDataById(@PathVariable("id") Integer id)
+//	{
+//		Optional<Address> opt = addressrepo.findById(id);
+//		
+//		
+//		if(opt.isEmpty())
+//		{
+//			return null;
+//		}
+//		else
+//		{
+//			return opt.get();
+//		}
+//	}
+//	
+//	    @GetMapping("/getAllAddress")
+//	    public List<Address> getAllProduct(){
+//	    	return addressrepo.findAll();
+//	    } 
+//	    
+//	 
+//	    
+//	    @DeleteMapping("/deleteAddressById/{id}")
+//	    public Address deleteProductById(@PathVariable("id") Integer id)
+//	    {
+//	    	Address address = addressrepo.findById(id).get();
+//	    	addressrepo.deleteById(id);
+//	    	return address;
+//	    } 
+//	    
+//	    @PutMapping("/updateAddress")
+//	    public Address updateData(@RequestBody Address address)
+//	    {
+//	    	addressrepo.save(address);
+//	    	return address;
+//	    }
 
 }

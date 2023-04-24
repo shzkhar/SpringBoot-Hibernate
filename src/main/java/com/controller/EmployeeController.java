@@ -17,19 +17,19 @@ import com.repository.DepartmentRepo;
 import com.repository.EmployeeRepo;
 
 
-
-
 @RestController
 public class EmployeeController {
 
 	@Autowired
 	EmployeeRepo employeeRepo;
 	
-	
+	@Autowired
+	DepartmentRepo deptRepo;
 	
 	@PostMapping("/addEmployeeData")
 	public Employee addEmployeeData(@RequestBody Employee employee)
 	{
+		deptRepo.save(employee.getDepartment());
 		employeeRepo.save(employee);
 		return employee;
 	}

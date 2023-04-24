@@ -9,8 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name = "Department12 ")
+@Table(name = "Department12")
 public class Department {
 
 	@Id
@@ -18,7 +20,8 @@ public class Department {
 	private Integer deptid;
 	private String deptname;
 	
-	@OneToMany(mappedBy = "deparment")
+	@JsonIgnore
+	@OneToMany(mappedBy = "department")
 	Set<Employee> employee;
 	
 	public Integer getDeptid() {
@@ -32,6 +35,12 @@ public class Department {
 	}
 	public void setDeptname(String deptname) {
 		this.deptname = deptname;
+	}
+	public Set<Employee> getEmployee() {
+		return employee;
+	}
+	public void setEmployee(Set<Employee> employee) {
+		this.employee = employee;
 	}
 	
 	

@@ -13,13 +13,13 @@ import javax.persistence.Table;
 public class PersonDetails {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer pid;
 	private String firstname;
 	private String lastname;
 	private String mobno;
 	
 	@OneToOne
-	@JoinColumn(name = "addressid",referencedColumnName = "id")
+	@JoinColumn(name = "aid",referencedColumnName = "aid")
 	Address address;
 	
 	public Address getAddress() {
@@ -34,11 +34,12 @@ public class PersonDetails {
 	public void setMobno(String mobno) {
 		this.mobno = mobno;
 	}
-	public Integer Id() {
-		return id;
+	
+	public Integer getPid() {
+		return pid;
 	}
-	public void id(Integer personid) {
-		this.id = personid;
+	public void setPid(Integer pid) {
+		this.pid = pid;
 	}
 	public String getFirstname() {
 		return firstname;
